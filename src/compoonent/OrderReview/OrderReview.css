@@ -1,8 +1,35 @@
-.orderItem{
+.orderItem {
     border: 1px solid;
     border-radius: 8px;
-    padding:8px;
-    margin-top:21px;
-    width:578px;
+    padding: 8px;
+    margin-top: 21px;
+    width: 578px;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orderItem img {
+    width: 91px;
+}
+
+.order-detail {
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.order-detail p {
+    margin: 0;
+}
+
+.delete-icon {
+    color: rgba(235, 87, 87, 1);
+    background-color: rgba(235, 87, 87, .3);
+    ;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    font-size: 30px;
 }
