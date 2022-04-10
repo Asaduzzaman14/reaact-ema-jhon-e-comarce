@@ -9,22 +9,22 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 
 // google
-const provider = new GoogleAuthProvider()
-const auth2 = getAuth()
+// const provider = new GoogleAuthProvider()
+// const auth2 = getAuth()
 
 const SignUp = () => {
 
 
     // sign in with google
-    const handelGoogleSignIn = e => {
-        signInWithPopup(auth2, provider)
-            .then(res => {
-                console.log(res);
-            })
-            .catch(err => {
-                console.log(err);
-            })
-    }
+    // const handelGoogleSignIn = e => {
+    //     signInWithPopup(auth2, provider)
+    //         .then(res => {
+    //             console.log(res);
+    //         })
+    //         .catch(err => {
+    //             console.log(err);
+    //         })
+    // }
 
 
 
@@ -75,7 +75,7 @@ const SignUp = () => {
 
     return (
         <div>
-            <button onClick={handelGoogleSignIn}>sing in to google</button>
+
 
             <div className='form-contianer'>
                 <div>
