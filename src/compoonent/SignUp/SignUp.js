@@ -1,11 +1,32 @@
+
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 
 
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
+
+// google
+const provider = new GoogleAuthProvider()
+const auth2 = getAuth()
 
 const SignUp = () => {
+
+
+    // sign in with google
+    const handelGoogleSignIn = e => {
+        signInWithPopup(auth2, provider)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
+
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -18,25 +39,22 @@ const SignUp = () => {
 
     const handelEmailBlur = event => {
         setEmail(event.target.value)
-        console.log(email);
     }
 
     const handelPasswordBlur = event => {
         setPassword(event.target.value)
-        console.log(password);
     }
 
-    const handelconfirmPasswordBlur = event => {
+    const handelConfirmPasswordBlur = event => {
         setConfirmPassword(event.target.value)
-        console.log(confirmPassword);
 
     }
 
     if (user) {
-        navigate('/inventory')
+        navigate('/shop')
     }
 
-    const handelCreatUser = event => {
+    const handelCreateUser = event => {
         event.preventDefault()
 
 
@@ -50,25 +68,20 @@ const SignUp = () => {
         }
 
         createUserWithEmailAndPassword(email, password)
-            .then((result) => {
-                // const user = result.user
-                console.log(result);
-                console.log("this is result");
-            })
-
-        // createUserWithEmailAndPassword(email, password)
 
     }
 
 
+
     return (
         <div>
+            <button onClick={handelGoogleSignIn}>sing in to google</button>
 
             <div className='form-contianer'>
                 <div>
                     <h1 className='form-title'>SignUp</h1>
 
-                    <form onSubmit={handelCreatUser}>
+                    <form onSubmit={handelCreateUser}>
 
                         <div className='input-group'>
                             <label htmlFor="email">Email</label>
@@ -82,13 +95,14 @@ const SignUp = () => {
 
                         <div className='input-group'>
                             <label htmlFor="Confirm-password">Confirm Password</label>
-                            <input onBlur={handelconfirmPasswordBlur} type="password" name='password' required />
+                            <input onBlur={handelConfirmPasswordBlur} type="password" name='password' required />
                         </div>
                         <p style={{ color: 'red' }}>
-                            {error.message}
+                            {error}
 
                         </p>
-                        <input className='form-submit' type="Sign Up" value="Submit" />
+
+                        <input className='form-submit' type="submit" value="Submit" />
 
                     </form>
                     <p>

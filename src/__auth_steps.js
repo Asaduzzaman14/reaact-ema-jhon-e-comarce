@@ -7,6 +7,11 @@
  * 5. Create Login, singUp compponent, setU route
  * 6.attach form fild handler and form submit handler
  * 7.npm install --save react-firebase-hooks
+ * 8. useCreateUserWithEmailAndPassword form react-firebase-hooks
+ * 9.if user is created redericte to the expected page
+ * 10.
+ * 11.
+ * 12.
  * 
  * 
  * 
