@@ -1,3 +1,17 @@
 .review-items-container {
     margin: 0 auto;
 }
+
+.cart-btn {
+    /* width: 415px; */
+    width: 315px;
+    height: 50px;
+    background-color: rgba(255, 153, 0, 1);
+    border: none;
+    border-radius: 4px;
+    font-family: Lato;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.0125em;
+}

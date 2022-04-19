@@ -9,16 +9,12 @@ const Login = () => {
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
 
-    const [
-        signInWithEmailAndPassword,
-        user,
-        loading,
-        error,
-    ] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
 
 
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
+
     const handelEmailBlur = event => {
 
         setEmail(event.target.value)
@@ -36,7 +32,7 @@ const Login = () => {
     const handelSignIn = (e) => {
         e.preventDefault()
         signInWithEmailAndPassword(email, password)
-        console.log(password);
+
     }
 
 

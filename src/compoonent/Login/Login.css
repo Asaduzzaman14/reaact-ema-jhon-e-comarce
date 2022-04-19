@@ -1,12 +1,13 @@
 .form-contianer {
     width: 600px;
     margin: 0 auto;
-    margin: 0 auto;
+    margin-top: 40px;
     border: 1px solid #95a0a7;
     border-radius: 8px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
+    box-shadow: -2px -1px 4px 4px rgba(255, 153, 0, 0.8);
 }
 
 .form-title {
