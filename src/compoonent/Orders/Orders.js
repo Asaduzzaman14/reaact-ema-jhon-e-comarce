@@ -13,9 +13,9 @@ const Orders = () => {
     const navigate = useNavigate();
     // handel form orderReview Componenet
     const handelRemoveProduct = (product) => {
-        const rest = cart.filter(pd => pd.id !== product.id);
+        const rest = cart.filter(pd => pd._id !== product._id);
         setCart(rest);
-        removeFromDb(product.id);
+        removeFromDb(product._id);
     }
 
     return (
@@ -24,14 +24,14 @@ const Orders = () => {
                 {
                     cart.map(product => <OrderReview
                         product={product}
-                        key={product.id}
+                        key={product._id}
                         handelRemoveProduct={handelRemoveProduct}
                     ></OrderReview>)
                 }
             </div>
             <div className="cart-container">
                 <Cart
-                    key={cart.id}
+                    key={cart._id}
                     cart={cart}
 
                 >
